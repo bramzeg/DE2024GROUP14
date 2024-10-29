@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>SMS Spam Detection - Result</title>
+    <title>Likelihood of being spam</title>
 </head>
 <body>
 
-<h1>Classification Result</h1>
-
-<p><strong>Message:</strong> {{ smsContent }}</p>
-<p><strong>Prediction:</strong> <span style="color: {{ classificationResult == 'Not Spam' ? 'green' : 'red' }}">{{ classificationResult }}</span></p>
-
-<a href="/input">Classify Another Message</a>
-
+{% if prediction_variable==true %}
+    <p>It is likely that this is spam.</p>
+{% else %}
+    <p>It is unlikely that this is spam</p>
+{% endif %}
 </body>
 </html>
